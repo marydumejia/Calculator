@@ -1,0 +1,135 @@
+body{
+    width: 100%;
+	height: 100vh;
+}
+
+main{
+     /* borde de la calculadora */
+    border-radius: 1.5rem; /* redondea el rectángulo */
+    box-shadow: inset 1px 1px 2px #ccc, inset -1px -1px 2px #ccc,
+		0px 8px 10px #0006; /* insets : borde interno, otro : sombra externa */
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+	width: 90%; 
+	margin: 0.8rem 1rem 0; /* 1 : arriba, 2 : a la derecha, 3 : padding del header */
+}
+
+header .circle { /* redondea el rectángulo */
+	margin-right: 0.8rem; /* espaciado entre circulos */
+	width: 1.5rem; /* mantiene el ancho */
+	height: 1.5rem; /* mantiene el alto */
+	border: none; /* le quita el borde */
+	border-radius: 50%; /* lo hace circular */
+	line-height: 1;
+	cursor: pointer;
+}
+
+.circle::before {
+	content: "";
+	margin-left: -1px;
+	font-size: 1.5rem;
+}
+
+.circle.red {
+	color: hsl(3, 100%, 25%); /* color para puntero */
+	background-color: #ff6057;
+}
+.circle.yellow {
+	color: hsl(41, 99%, 25%);
+	background-color: #febc2e;
+}
+.circle.green {
+	color: hsl(129, 67%, 25%);
+	background-color: #28c841;
+}
+
+.circle.red:hover::before {
+	content: "×";
+}
+
+.circle.yellow:hover::before {
+	content: "−";
+}
+
+.circle.green::before {
+	font-size: 1.3rem;
+	line-height: 1.25;
+}
+
+.circle.green:hover::before {
+	content: "⤢";
+	margin-left: -0.03rem;
+}
+
+.answer {
+    margin-top: 2rem;
+    width: 100%;
+    height: 5rem;
+}
+
+.answer p {
+    margin: 0;
+    padding-right: 1.5rem;
+    color: white;
+    font-size: 6rem;
+    font-weight: 300;
+    text-align: right;
+    line-height: 0.7;
+}
+
+.buttons{
+    margin-top: 2rem;
+    width: 100%;
+    height: 29rem;
+}
+
+.buttons .row{
+    margin-bottom: 0.3px;
+    padding-left: 0.3rem;
+    width: 100%;
+    height: 6rem;
+}
+
+.buttons .row:last-of-type{
+    margin-bottom: 0;
+}
+
+.buttons .row .gray.button{
+    margin-right: -2px;
+    padding: 0;
+    width: 7.5rem;
+    height: 100%;
+    border: none;
+    color: white;
+    background-color: #7c7b7f;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.row .gray.button:hover{
+    filter: brightness(120%);
+}
+
+.row .dark.gray.button{
+    background-color: #626065;
+}
+
+.row .gray.long.button{
+    width: 15.15rem;
+    border-bottom-left-radius: 1.3rem;
+}
+
+.row .yellow.button{
+    background-color: #ff9f0b;
+    margin-left: 0px;
+}
+
+.row .yellow.button.final{
+    background-color: #ff9f0b;
+    margin-left: 0px;
+    border-bottom-right-radius: 1.4rem;
+}
